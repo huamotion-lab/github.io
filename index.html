@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HuaMotion Lab - 官方網站</title>
     <style>
-        /* 引入 Logo 專用字體 */
-        @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+        /* 1. 引入新舊字體 (保留 Righteous 以防萬一，新增 Rubik 給新 Logo) */
+        @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Rubik:wght@900&display=swap');
 
         /* 基礎設定 */
         body { 
@@ -27,46 +27,24 @@
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); 
         }
 
-        /* --- Logo 區塊樣式 --- */
+        /* --- 新版 Logo 區塊樣式 --- */
         .logo-container {
-            width: 160px;
-            height: 160px;
-            margin: 0 auto;
+            /* 讓寬度彈性調整，最大不超過原設計的 350px (或可放大) */
+            width: 100%;
+            max-width: 450px; 
+            /* 保持 SVG 的比例，避免變形 */
+            aspect-ratio: 350/100;
+            margin: 0 auto 30px auto; /* 增加底部留白 */
             position: relative;
         }
-        
-        .brand-name {
-            font-family: 'Righteous', cursive;
-            font-size: 2rem;
-            color: #2D3748;
-            margin: 10px 0 0 0;
-            letter-spacing: 1px;
-        }
 
-        .brand-sub {
-            font-size: 0.875rem;
-            color: #A0AEC0;
-            margin-bottom: 40px;
-            font-weight: 500;
-            letter-spacing: 2px;
-        }
-
-        /* --- Logo 動畫關鍵影格 (從原設計移植) --- */
-        .animate-blink {
-            animation: blink 3s infinite;
-            transform-origin: center; /* 修正眼睛縮放中心點 */
-        }
-        @keyframes blink {
-            0%, 96%, 100% { transform: scaleY(1); }
-            98% { transform: scaleY(0.1); }
-        }
-
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+        /* --- 新版 Logo 動畫定義 (Gravity Drop) --- */
+        @keyframes dropIn {
+            0% { transform: translateY(-10px); opacity: 0; }
+            40% { transform: translateY(25px); opacity: 1; }
+            45% { transform: translateY(20px); }
+            50% { transform: translateY(25px); }
+            100% { transform: translateY(25px); }
         }
 
         /* --- 遊戲內容區塊 --- */
@@ -76,7 +54,7 @@
         }
 
         .game-image {
-            max-width: 200px; /* 限制圖片最大寬度，避免過大 */
+            max-width: 200px;
             width: 100%;
             height: auto;
             border-radius: 15px;
@@ -85,17 +63,14 @@
             transition: transform 0.2s;
         }
         
-        .game-image:hover {
-            transform: scale(1.05);
-        }
+        .game-image:hover { transform: scale(1.05); }
 
         h2 { margin-top: 10px; color: #2D3748; }
-        
         p { line-height: 1.6; color: #666; }
 
         .btn { 
             display: inline-block; 
-            background-color: #319795; /* 改用與 Logo 較搭配的青綠色 */
+            background-color: #319795; 
             color: white; 
             padding: 14px 28px; 
             text-decoration: none; 
@@ -106,9 +81,7 @@
             transition: background-color 0.2s;
         }
         
-        .btn:hover {
-            background-color: #285E61;
-        }
+        .btn:hover { background-color: #285E61; }
 
         .footer { 
             margin-top: 50px; 
@@ -127,29 +100,45 @@
     <div class="container">
         
         <div class="logo-container">
-            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
-                <rect x="15" y="15" width="20" height="70" rx="4" fill="#2D3748" />
-                <rect x="65" y="15" width="20" height="70" rx="4" fill="#2D3748" />
-                
-                <g class="animate-float">
-                    <rect x="30" y="35" width="40" height="30" rx="6" fill="#00B5D8" stroke="white" stroke-width="2"/>
-                    <circle cx="43" cy="48" r="3" fill="white" class="animate-blink" style="transform-origin: 43px 48px;"/>
-                    <circle cx="57" cy="48" r="3" fill="white" class="animate-blink" style="transform-origin: 57px 48px;"/>
-                    <path d="M 46 55 Q 50 58 54 55" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <svg viewBox="0 0 350 100" style="width: 100%; height: 100%;">
+                <defs>
+                    <filter id="solid3d">
+                        <feDropShadow dx="4" dy="4" stdDeviation="0" flood-color="black" flood-opacity="0.25" />
+                    </filter>
+                </defs>
+
+                <text x="240" y="70" font-family="'Rubik', sans-serif" font-weight="900" font-size="40" fill="#2D3748"
+                    text-anchor="end" filter="url(#solid3d)">HuaMotion</text>
+
+                <g transform="translate(240, -5)"> <path d="M 20 20 L 20 80 Q 20 90 30 90 L 70 90 Q 80 90 80 80 L 80 20" fill="none" stroke="#2D3748"
+                        stroke-width="6" stroke-linecap="round" />
+
+                    <g style="animation: dropIn 2.5s ease-out infinite both; animation-delay: 0s;">
+                        <text x="50" y="57" font-family="'Rubik', sans-serif" font-weight="900" font-size="50"
+                            fill="#E53E3E" text-anchor="middle" opacity="0.8" transform="rotate(20, 50, 77)"
+                            filter="url(#solid3d)">b</text>
+                    </g>
+                    <g style="animation: dropIn 2.5s ease-out infinite both; animation-delay: 0.2s;">
+                        <text x="50" y="57" font-family="'Rubik', sans-serif" font-weight="900" font-size="50"
+                            fill="#DD6B20" text-anchor="middle" opacity="0.9" transform="rotate(-20, 50, 57)"
+                            filter="url(#solid3d)">a</text>
+                    </g>
+
+                    <g style="animation: dropIn 2.5s ease-out infinite both; animation-delay: 0.4s;">
+                        <text x="50" y="35" font-family="'Rubik', sans-serif" font-weight="900" font-size="50"
+                            fill="#319795" text-anchor="middle" opacity="0.9" transform="rotate(-10, 50, 57)"
+                            filter="url(#solid3d)">L</text>
+                    </g>
                 </g>
             </svg>
         </div>
-        
-        <h1 class="brand-name">HUAMOTION</h1>
-        <div class="brand-sub">LAB</div>
-
         <div class="game-section">
             <img src="title.png" alt="EasyMoveBlock Game Icon" class="game-image">
             
-            <h2>EasyMoveBlock</h2>
-            <p>簡單的滑動方塊與益智解謎。<br>在有限的時間內，挑戰您的反應與策略！</p>
+            <h2>Reflex Block</h2>
+            <p>解限解方 - 極速方塊解謎<br>在有限的時間內，挑戰您的反應與策略！</p>
             
-            <a href="#" class="btn">Google Play 下載 (Coming Soon)</a>
+            <a href="https://play.google.com/store/apps/details?id=com.leo.blockgame" target="_blank" class="btn">Google Play 下載</a>
         </div>
 
         <div class="footer">
