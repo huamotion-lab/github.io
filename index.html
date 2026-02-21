@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,42 +10,59 @@
         @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Rubik:wght@900&display=swap');
 
         /* 基礎設定 */
-        body { 
-            font-family: 'Segoe UI', sans-serif; 
-            text-align: center; 
-            background-color: #f3f4f6; 
-            margin: 0; 
-            padding: 40px 20px; 
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 40px 20px;
             color: #333;
         }
 
-        .container { 
-            max-width: 600px; 
-            margin: 0 auto; 
-            background: white; 
-            padding: 50px 40px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); 
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
         /* --- 新版 Logo 區塊樣式 --- */
         .logo-container {
             /* 讓寬度彈性調整，最大不超過原設計的 350px (或可放大) */
             width: 100%;
-            max-width: 450px; 
+            max-width: 450px;
             /* 保持 SVG 的比例，避免變形 */
             aspect-ratio: 350/100;
-            margin: 0 auto 30px auto; /* 增加底部留白 */
+            margin: 0 auto 30px auto;
+            /* 增加底部留白 */
             position: relative;
         }
 
         /* --- 新版 Logo 動畫定義 (Gravity Drop) --- */
         @keyframes dropIn {
-            0% { transform: translateY(-10px); opacity: 0; }
-            40% { transform: translateY(25px); opacity: 1; }
-            45% { transform: translateY(20px); }
-            50% { transform: translateY(25px); }
-            100% { transform: translateY(25px); }
+            0% {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+
+            40% {
+                transform: translateY(25px);
+                opacity: 1;
+            }
+
+            45% {
+                transform: translateY(20px);
+            }
+
+            50% {
+                transform: translateY(25px);
+            }
+
+            100% {
+                transform: translateY(25px);
+            }
         }
 
         /* --- 遊戲內容區塊 --- */
@@ -58,47 +76,92 @@
             width: 100%;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
             transition: transform 0.2s;
         }
-        
-        .game-image:hover { transform: scale(1.05); }
 
-        h2 { margin-top: 10px; color: #2D3748; }
-        p { line-height: 1.6; color: #666; }
+        .game-image:hover {
+            transform: scale(1.05);
+        }
 
-        .btn { 
-            display: inline-block; 
-            background-color: #319795; 
-            color: white; 
-            padding: 14px 28px; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            margin-top: 25px; 
-            font-weight: bold; 
+        h2 {
+            margin-top: 10px;
+            color: #2D3748;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #319795;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 25px;
+            font-weight: bold;
             box-shadow: 0 4px 6px rgba(49, 151, 149, 0.3);
             transition: background-color 0.2s;
         }
-        
-        .btn:hover { background-color: #285E61; }
 
-        .footer { 
-            margin-top: 50px; 
-            font-size: 13px; 
-            color: #888; 
-            border-top: 1px solid #eee; 
-            padding-top: 20px; 
+        .btn:hover {
+            background-color: #285E61;
         }
-        
-        a { color: #319795; text-decoration: none;}
-        a:hover { text-decoration: underline; }
+
+        /* --- 語言切換按鈕 --- */
+        .lang-btn {
+            background: #e2e8f0;
+            color: #64748b;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            background: #cbd5e1;
+        }
+
+        .lang-btn.active {
+            background: #319795;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(49, 151, 149, 0.3);
+        }
+
+        .language-section {
+            display: none;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        a {
+            color: #319795;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="container">
-        
+
         <div class="logo-container">
             <svg viewBox="0 0 350 100" style="width: 100%; height: 100%;">
                 <defs>
@@ -110,7 +173,8 @@
                 <text x="240" y="70" font-family="'Rubik', sans-serif" font-weight="900" font-size="40" fill="#2D3748"
                     text-anchor="end" filter="url(#solid3d)">HuaMotion</text>
 
-                <g transform="translate(240, -5)"> <path d="M 20 20 L 20 80 Q 20 90 30 90 L 70 90 Q 80 90 80 80 L 80 20" fill="none" stroke="#2D3748"
+                <g transform="translate(240, -5)">
+                    <path d="M 20 20 L 20 80 Q 20 90 30 90 L 70 90 Q 80 90 80 80 L 80 20" fill="none" stroke="#2D3748"
                         stroke-width="6" stroke-linecap="round" />
 
                     <g style="animation: dropIn 2.5s ease-out infinite both; animation-delay: 0s;">
@@ -132,21 +196,205 @@
                 </g>
             </svg>
         </div>
-        <div class="game-section">
-            <img src="title.png" alt="EasyMoveBlock Game Icon" class="game-image">
-            
-            <h2>Reflex Block</h2>
-            <p>解限解方 - 極速方塊解謎<br>在有限的時間內，挑戰您的反應與策略！</p>
-            
-            <a href="https://play.google.com/store/apps/details?id=com.leo.blockgame" target="_blank" class="btn">Google Play 下載</a>
+        <div class="lang-nav" id="lang-nav-container"
+            style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
+            <button class="lang-btn active" data-target="lang-en">English</button>
+            <button class="lang-btn" data-target="lang-zh">繁體中文</button>
+            <button class="lang-btn" data-target="lang-ja">日本語</button>
+            <button class="lang-btn" data-target="lang-es">Español</button>
+            <button class="lang-btn" data-target="lang-pt-BR">Português (BR)</button>
+            <button class="lang-btn" data-target="lang-ko">한국어</button>
+            <button class="lang-btn" data-target="lang-id">Bahasa Indonesia</button>
+            <button class="lang-btn" data-target="lang-tl">Tagalog</button>
+            <button class="lang-btn" data-target="lang-hi">हिन्दी</button>
         </div>
 
-        <div class="footer">
-            <p>聯絡我們: easymoveblocks.studio@gmail.com</p>
-            <p><a href="privacy.html">隱私權政策 (Privacy Policy)</a></p>
-            <p>&copy; 2026 HuaMotion Lab. All rights reserved.</p>
+        <div class="game-section">
+            <img src="title.png" alt="EasyMoveBlock Game Icon" class="game-image">
+
+            <div id="lang-en" class="language-section" style="display: block;">
+                <h2>Reflex Block</h2>
+                <p>Ultimate Puzzle - High-speed block solving<br>Challenge your reflexes and strategy in a limited time!
+                </p>
+                <a href="https://play.google.com/store/apps/details?id=com.leo.blockgame" target="_blank"
+                    class="btn">Download on Google Play</a>
+
+                <div class="footer">
+                    <p>Contact us: easymoveblocks.studio@gmail.com</p>
+                    <p><a href="privacy.html">Privacy Policy</a></p>
+                    <p>&copy; 2026 HuaMotion Lab. All rights reserved.</p>
+                </div>
+            </div>
+
+            <div id="lang-zh" class="language-section">
+                <h2>Reflex Block</h2>
+                <p>解限解方 - 極速方塊解謎<br>在有限的時間內，挑戰您的反應與策略！</p>
+                <a href="https://play.google.com/store/apps/details?id=com.leo.blockgame" target="_blank"
+                    class="btn">Google Play 下載</a>
+
+                <div class="footer">
+                    <p>聯絡我們: easymoveblocks.studio@gmail.com</p>
+                    <p><a href="privacy.html">隱私權政策 (Privacy Policy)</a></p>
+                    <p>&copy; 2026 HuaMotion Lab. All rights reserved.</p>
+                </div>
+            </div>
+
+            <div id="lang-ja" class="language-section">
+                <h2>Reflex Block</h2>
+                <p>瞬感ブロック - 超高速ブロックパズル<br>限られた時間内で、あなたの反射神経と戦略に挑戦してください！</p>
+                <a href="https://play.google.com/store/apps/details?id=com.leo.blockgame" target="_blank"
+                    class="btn">Google Play でダウンロード</a>
+
+                <div class="footer">
+                    <p>お問い合わせ: easymoveblocks.studio@gmail.com</p>
+                    <p><a href="privacy.html">プライバシーポリシー</a></p>
+                    <p>&copy; 2026 HuaMotion Lab. All rights reserved.</p>
+                </div>
+            </div>
+
+            <div id="lang-es" class="language-section">
+                <h2>Reflex Block</h2>
+                <p>Rompecabezas Extremo - Resolución de bloques a alta velocidad<br>¡Desafía tus reflejos y estrategia
+                    en un tiempo limitado!</p>
+                <a href="https://play.google.com/store/apps/details?id=com.leo.blockgame" target="_blank"
+                    class="btn">Descargar en Google Play</a>
+
+                <div class="footer">
+                    <p>Contáctenos: easymoveblocks.studio@gmail.com</p>
+                    <p><a href="privacy.html">Política de Privacidad</a></p>
+                    <p>&copy; 2026 HuaMotion Lab. All rights reserved.</p>
+                </div>
+            </div>
+
+            <div id="lang-pt-BR" class="language-section">
+                <h2>Reflex Block</h2>
+                <p>Quebra-cabeça Extremo - Resolução de blocos em alta velocidade<br>Desafie seus reflexos e estratégia
+                    em um tempo limitado!</p>
+                <a href="https://play.google.com/store/apps/details?id=com.leo.blockgame" target="_blank"
+                    class="btn">Baixar no Google Play</a>
+
+                <div class="footer">
+                    <p>Contate-nos: easymoveblocks.studio@gmail.com</p>
+                    <p><a href="privacy.html">Política de Privacidade</a></p>
+                    <p>&copy; 2026 HuaMotion Lab. All rights reserved.</p>
+                </div>
+            </div>
+
+            <div id="lang-ko" class="language-section">
+                <h2>Reflex Block</h2>
+                <p>초고속 블록 퍼즐<br>제한된 시간 안에 반사 신경과 전략에 도전하세요!</p>
+                <a href="https://play.google.com/store/apps/details?id=com.leo.blockgame" target="_blank"
+                    class="btn">Google Play 다운로드</a>
+
+                <div class="footer">
+                    <p>문의하기: easymoveblocks.studio@gmail.com</p>
+                    <p><a href="privacy.html">개인정보처리방침</a></p>
+                    <p>&copy; 2026 HuaMotion Lab. All rights reserved.</p>
+                </div>
+            </div>
+
+            <div id="lang-id" class="language-section">
+                <h2>Reflex Block</h2>
+                <p>Teka-teki Ekstrem - Pemecahan blok kecepatan tinggi<br>Tantang refleks dan strategi Anda dalam waktu
+                    terbatas!</p>
+                <a href="https://play.google.com/store/apps/details?id=com.leo.blockgame" target="_blank"
+                    class="btn">Unduh di Google Play</a>
+
+                <div class="footer">
+                    <p>Hubungi kami: easymoveblocks.studio@gmail.com</p>
+                    <p><a href="privacy.html">Kebijakan Privasi</a></p>
+                    <p>&copy; 2026 HuaMotion Lab. All rights reserved.</p>
+                </div>
+            </div>
+
+            <div id="lang-tl" class="language-section">
+                <h2>Reflex Block</h2>
+                <p>Matinding Palaisipan - Mabilisang paglutas ng block<br>Subukan ang iyong reflexes at diskarte sa
+                    limitadong oras!</p>
+                <a href="https://play.google.com/store/apps/details?id=com.leo.blockgame" target="_blank"
+                    class="btn">I-download sa Google Play</a>
+
+                <div class="footer">
+                    <p>Makipag-ugnayan sa amin: easymoveblocks.studio@gmail.com</p>
+                    <p><a href="privacy.html">Patakaran sa Pagkapribado</a></p>
+                    <p>&copy; 2026 HuaMotion Lab. All rights reserved.</p>
+                </div>
+            </div>
+
+            <div id="lang-hi" class="language-section">
+                <h2>Reflex Block</h2>
+                <p>अल्टीमेट पज़ल - हाई-स्पीड ब्लॉक सॉल्विंग<br>सीमित समय में अपनी सजगता और रणनीति को चुनौती दें!</p>
+                <a href="https://play.google.com/store/apps/details?id=com.leo.blockgame" target="_blank"
+                    class="btn">Google Play पर डाउनलोड करें</a>
+
+                <div class="footer">
+                    <p>हमसे संपर्क करें: easymoveblocks.studio@gmail.com</p>
+                    <p><a href="privacy.html">गोपनीयता नीति</a></p>
+                    <p>&copy; 2026 HuaMotion Lab. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visitor Counter -->
+        <div style="margin-top: 20px; text-align: center;">
+            <img src="https://api.visitorbadge.io/api/visitors?path=huamotion.lab.index&label=VISITS&countColor=%23319795"
+                alt="Visits">
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.lang-btn');
+            const sections = document.querySelectorAll('.language-section');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    sections.forEach(sec => sec.style.display = 'none');
+                    const targetId = btn.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.style.display = 'block';
+                    }
+                });
+            });
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryLang = urlParams.get('lang');
+            let matchedTarget = 'lang-en';
+
+            if (queryLang) {
+                const lowerQuery = queryLang.toLowerCase();
+                if (lowerQuery.startsWith('zh')) matchedTarget = 'lang-zh';
+                else if (lowerQuery.startsWith('ja')) matchedTarget = 'lang-ja';
+                else if (lowerQuery.startsWith('ko')) matchedTarget = 'lang-ko';
+                else if (lowerQuery.startsWith('es')) matchedTarget = 'lang-es';
+                else if (lowerQuery.startsWith('pt')) matchedTarget = 'lang-pt-BR';
+                else if (lowerQuery.startsWith('id')) matchedTarget = 'lang-id';
+                else if (lowerQuery.startsWith('hi')) matchedTarget = 'lang-hi';
+                else if (lowerQuery.startsWith('tl') || lowerQuery.startsWith('fil')) matchedTarget = 'lang-tl';
+            } else {
+                const userLang = navigator.language || navigator.userLanguage || 'en';
+                const lowerLang = userLang.toLowerCase();
+
+                if (lowerLang.startsWith('zh')) matchedTarget = 'lang-zh';
+                else if (lowerLang.startsWith('ja')) matchedTarget = 'lang-ja';
+                else if (lowerLang.startsWith('ko')) matchedTarget = 'lang-ko';
+                else if (lowerLang.startsWith('es')) matchedTarget = 'lang-es';
+                else if (lowerLang.startsWith('pt')) matchedTarget = 'lang-pt-BR';
+                else if (lowerLang.startsWith('id')) matchedTarget = 'lang-id';
+                else if (lowerLang.startsWith('hi')) matchedTarget = 'lang-hi';
+                else if (lowerLang.startsWith('tl') || lowerLang.startsWith('fil')) matchedTarget = 'lang-tl';
+            }
+
+            const autoBtn = document.querySelector(`.lang-btn[data-target="${matchedTarget}"]`);
+            if (autoBtn) {
+                autoBtn.click();
+            }
+        });
+    </script>
 </body>
+
 </html>
