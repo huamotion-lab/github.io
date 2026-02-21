@@ -691,7 +691,12 @@
         <div style="text-align: center; margin-top: 50px; color: #94a3b8; font-size: 0.9rem;">
             Copyright © 2026 HuaMotion Lab. All rights reserved.
         </div>
-    </div>
+
+        <!-- Visitor Counter -->
+        <div style="margin-top: 30px; text-align: center;">
+            <img src="https://api.visitorbadge.io/api/visitors?path=huamotion.lab.privacy&label=VISITS&countColor=%233b82f6"
+                alt="Visits">
+        </div>
     </div>
 
     <script>
@@ -717,19 +722,37 @@
                 });
             });
 
-            // Auto detect language from browser if possible
-            const userLang = navigator.language || navigator.userLanguage || 'en';
-            const lowerLang = userLang.toLowerCase();
+            // Parse language from URL query parameter (e.g. ?lang=zh)
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryLang = urlParams.get('lang');
+
             let matchedTarget = 'lang-en';
 
-            if (lowerLang.startsWith('zh')) matchedTarget = 'lang-zh';
-            else if (lowerLang.startsWith('ja')) matchedTarget = 'lang-ja';
-            else if (lowerLang.startsWith('ko')) matchedTarget = 'lang-ko';
-            else if (lowerLang.startsWith('es')) matchedTarget = 'lang-es';
-            else if (lowerLang.startsWith('pt')) matchedTarget = 'lang-pt-BR';
-            else if (lowerLang.startsWith('id')) matchedTarget = 'lang-id';
-            else if (lowerLang.startsWith('hi')) matchedTarget = 'lang-hi';
-            else if (lowerLang.startsWith('tl') || lowerLang.startsWith('fil')) matchedTarget = 'lang-tl';
+            if (queryLang) {
+                // Priority 1: URL query parameter
+                const lowerQuery = queryLang.toLowerCase();
+                if (lowerQuery.startsWith('zh')) matchedTarget = 'lang-zh';
+                else if (lowerQuery.startsWith('ja')) matchedTarget = 'lang-ja';
+                else if (lowerQuery.startsWith('ko')) matchedTarget = 'lang-ko';
+                else if (lowerQuery.startsWith('es')) matchedTarget = 'lang-es';
+                else if (lowerQuery.startsWith('pt')) matchedTarget = 'lang-pt-BR';
+                else if (lowerQuery.startsWith('id')) matchedTarget = 'lang-id';
+                else if (lowerQuery.startsWith('hi')) matchedTarget = 'lang-hi';
+                else if (lowerQuery.startsWith('tl') || lowerQuery.startsWith('fil')) matchedTarget = 'lang-tl';
+            } else {
+                // Priority 2: Auto detect language from browser
+                const userLang = navigator.language || navigator.userLanguage || 'en';
+                const lowerLang = userLang.toLowerCase();
+
+                if (lowerLang.startsWith('zh')) matchedTarget = 'lang-zh';
+                else if (lowerLang.startsWith('ja')) matchedTarget = 'lang-ja';
+                else if (lowerLang.startsWith('ko')) matchedTarget = 'lang-ko';
+                else if (lowerLang.startsWith('es')) matchedTarget = 'lang-es';
+                else if (lowerLang.startsWith('pt')) matchedTarget = 'lang-pt-BR';
+                else if (lowerLang.startsWith('id')) matchedTarget = 'lang-id';
+                else if (lowerLang.startsWith('hi')) matchedTarget = 'lang-hi';
+                else if (lowerLang.startsWith('tl') || lowerLang.startsWith('fil')) matchedTarget = 'lang-tl';
+            }
 
             const autoBtn = document.querySelector(`.lang-btn[data-target="${matchedTarget}"]`);
             if (autoBtn) {
