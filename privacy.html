@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +51,8 @@
             font-size: 1.2rem;
         }
 
-        p, li {
+        p,
+        li {
             color: #475569;
         }
 
@@ -84,6 +86,36 @@
             font-weight: bold;
         }
 
+        /* 語言導覽列 */
+        .lang-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .lang-btn {
+            background: #e2e8f0;
+            color: #64748b;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            background: #cbd5e1;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+        }
+
         /* 語言切換標籤 (視覺用) */
         .lang-tag {
             display: inline-block;
@@ -103,29 +135,54 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <a href="index.html" class="nav-link">← Back to Home (返回首頁)</a>
 
-        <div class="language-section">
+        <div class="lang-nav" id="lang-nav-container">
+            <button class="lang-btn active" data-target="lang-en">English</button>
+            <button class="lang-btn" data-target="lang-zh">繁體中文</button>
+            <button class="lang-btn" data-target="lang-ja">日本語</button>
+            <button class="lang-btn" data-target="lang-es">Español</button>
+            <button class="lang-btn" data-target="lang-pt-BR">Português (BR)</button>
+            <button class="lang-btn" data-target="lang-ko">한국어</button>
+            <button class="lang-btn" data-target="lang-id">Bahasa Indonesia</button>
+            <button class="lang-btn" data-target="lang-tl">Tagalog</button>
+            <button class="lang-btn" data-target="lang-hi">हिन्दी</button>
+        </div>
+
+        <div id="lang-en" class="language-section">
             <span class="lang-tag">English</span>
             <h1>Privacy Policy</h1>
             <p><strong>App Name:</strong> Reflex Block<br>
-            <strong>Developer:</strong> HuaMotion Lab<br>
-            <strong>Last updated:</strong> February 01, 2026</p>
+                <strong>Developer:</strong> HuaMotion Lab<br>
+                <strong>Last updated:</strong> February 01, 2026
+            </p>
 
             <h3>1. Introduction</h3>
-            <p>HuaMotion Lab built the Reflex Block app as an Ad-supported app. This SERVICE is provided by HuaMotion Lab at no cost and is intended for use as is. This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.</p>
+            <p>HuaMotion Lab built the Reflex Block app as an Ad-supported app. This SERVICE is provided by HuaMotion
+                Lab at no cost and is intended for use as is. This page is used to inform visitors regarding our
+                policies with the collection, use, and disclosure of Personal Information if anyone decided to use our
+                Service.</p>
 
             <h3>2. Data Collection & Use</h3>
-            <p>While HuaMotion Lab does not store your personal data on our own private servers, our app uses third-party services that may collect information used to identify you or your device to provide necessary functionality.</p>
+            <p>While HuaMotion Lab does not store your personal data on our own private servers, our app uses
+                third-party services that may collect information used to identify you or your device to provide
+                necessary functionality.</p>
             <p>The app uses the following third-party services:</p>
             <ul>
                 <li><strong>Google Play Games Services (GPGS)</strong><br>
-                This app uses Google Play Games Services to provide features such as sign-in, leaderboards, and cloud saves. By using these features, you acknowledge that Google may collect and process data such as your Gamer ID, profile name, avatar, and game activity (e.g., scores, level progress, and achievements) in accordance with Google's Privacy Policy. This data is used to rank you on public leaderboards and sync your progress.</li>
+                    This app uses Google Play Games Services to provide features such as sign-in, leaderboards, and
+                    cloud saves. By using these features, you acknowledge that Google may collect and process data such
+                    as your Gamer ID, profile name, avatar, and game activity (e.g., scores, level progress, and
+                    achievements) in accordance with Google's Privacy Policy. This data is used to rank you on public
+                    leaderboards and sync your progress.</li>
                 <li><strong>Google AdMob</strong><br>
-                This app uses Google AdMob to display advertisements. AdMob may use device identifiers (e.g., Android Advertising ID) and data about your interaction with ads to provide personalized advertisements relevant to your interests.</li>
+                    This app uses Google AdMob to display advertisements. AdMob may use device identifiers (e.g.,
+                    Android Advertising ID) and data about your interaction with ads to provide personalized
+                    advertisements relevant to your interests.</li>
             </ul>
             <p>Link to Privacy Policy of third-party service providers:</p>
             <ul>
@@ -134,48 +191,54 @@
             </ul>
 
             <h3>3. Log Data</h3>
-            <p>We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.</p>
+            <p>We want to inform you that whenever you use our Service, in a case of an error in the app we collect data
+                and information (through third-party products) on your phone called Log Data. This Log Data may include
+                information such as your device Internet Protocol (“IP”) address, device name, operating system version,
+                the configuration of the app when utilizing our Service, the time and date of your use of the Service,
+                and other statistics.</p>
 
             <h3>4. Cookies</h3>
-            <p>This Service does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services.</p>
+            <p>This Service does not use these “cookies” explicitly. However, the app may use third-party code and
+                libraries that use “cookies” to collect information and improve their services.</p>
 
             <h3>5. Security</h3>
-            <p>We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
+            <p>We value your trust in providing us your Personal Information, thus we are striving to use commercially
+                acceptable means of protecting it. But remember that no method of transmission over the internet, or
+                method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.
+            </p>
 
             <h3>6. Changes to This Privacy Policy</h3>
-            <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+            <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page
+                periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on
+                this page.</p>
 
-            <h3>7. Data Deletion</h3>
-            <p>Since HuaMotion Lab does not store your personal data on private servers, your game data (Leaderboard, Achievements) is managed by Google Play Games Services. To delete your game data, you can:</p>
-            <ul>
-                <li>Go to Android Settings > Google > Settings for Google apps > Play Games > Delete Play Games calling account & data.</li>
-                <li>Or contact us at the email below for assistance.</li>
-            </ul>
-
-            <h3>8. Contact Us</h3>
-            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at: <strong>easymoveblocks.studio@gmail.com</strong></p>
+            <h3>7. Contact Us</h3>
+            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:
+                <strong>easymoveblocks.studio@gmail.com</strong>
+            </p>
         </div>
 
-        <hr class="divider">
-
-        <div class="language-section">
+        <div id="lang-zh" class="language-section" style="display: none;">
             <span class="lang-tag">繁體中文</span>
             <h1>隱私權政策</h1>
             <p><strong>應用程式名稱：</strong> Reflex Block (極限解方)<br>
-            <strong>開發者：</strong> HuaMotion Lab<br>
-            <strong>最後更新日期：</strong> 2026年 02月 01日</p>
+                <strong>開發者：</strong> HuaMotion Lab<br>
+                <strong>最後更新日期：</strong> 2026年 02月 01日
+            </p>
 
             <h3>1. 簡介</h3>
-            <p>HuaMotion Lab 開發了 Reflex Block 應用程式（以下簡稱「本服務」）。本服務為包含廣告的免費應用程式，由 HuaMotion Lab 按「現狀」提供給使用者使用。本頁面旨在告知使用者關於我們收集、使用和揭露個人資訊的相關政策。</p>
+            <p>HuaMotion Lab 開發了 Reflex Block 應用程式（以下簡稱「本服務」）。本服務為包含廣告的免費應用程式，由 HuaMotion Lab
+                按「現狀」提供給使用者使用。本頁面旨在告知使用者關於我們收集、使用和揭露個人資訊的相關政策。</p>
 
             <h3>2. 資料收集與使用</h3>
             <p>HuaMotion Lab 不會將您的個人資料儲存在我們的私人伺服器上。然而，本應用程式使用的第三方服務可能會收集可用於識別您身分或裝置的資訊，以提供必要的功能。</p>
             <p>本應用程式使用的第三方服務如下：</p>
             <ul>
                 <li><strong>Google Play 遊戲服務 (GPGS)</strong><br>
-                本應用程式使用 Google Play 遊戲服務來提供登入、排行榜與雲端存檔功能。使用這些功能即表示您同意 Google 根據其隱私權政策，收集並處理您的玩家 ID (Gamer ID)、個人資料名稱、頭像以及遊戲活動數據（例如：分數、關卡進度與成就）。這些資料將用於在公開排行榜上顯示您的排名以及同步您的遊戲進度。</li>
+                    本應用程式使用 Google Play 遊戲服務來提供登入、排行榜與雲端存檔功能。使用這些功能即表示您同意 Google 根據其隱私權政策，收集並處理您的玩家 ID (Gamer
+                    ID)、個人資料名稱、頭像以及遊戲活動數據（例如：分數、關卡進度與成就）。這些資料將用於在公開排行榜上顯示您的排名以及同步您的遊戲進度。</li>
                 <li><strong>Google AdMob</strong><br>
-                本應用程式使用 Google AdMob 顯示廣告。AdMob 可能會使用裝置識別碼（例如：Android 廣告 ID）以及您與廣告互動的數據，以提供符合您興趣的個人化廣告。</li>
+                    本應用程式使用 Google AdMob 顯示廣告。AdMob 可能會使用裝置識別碼（例如：Android 廣告 ID）以及您與廣告互動的數據，以提供符合您興趣的個人化廣告。</li>
             </ul>
             <p>第三方服務提供商的隱私權政策連結：</p>
             <ul>
@@ -184,7 +247,8 @@
             </ul>
 
             <h3>3. 記錄數據 (Log Data)</h3>
-            <p>當您使用本服務時，如果應用程式發生錯誤，我們可能會透過第三方產品收集您手機上的數據與資訊（稱為 Log Data）。這些數據可能包含您的裝置 IP 位址、裝置名稱、作業系統版本、使用本服務時的設定、使用時間與日期以及其他統計數據。</p>
+            <p>當您使用本服務時，如果應用程式發生錯誤，我們可能會透過第三方產品收集您手機上的數據與資訊（稱為 Log Data）。這些數據可能包含您的裝置 IP
+                位址、裝置名稱、作業系統版本、使用本服務時的設定、使用時間與日期以及其他統計數據。</p>
 
             <h3>4. Cookies</h3>
             <p>本服務本身不直接使用 Cookies。然而，本應用程式使用的第三方程式碼或函式庫可能會使用 Cookies 來收集資訊以改善其服務。</p>
@@ -195,37 +259,35 @@
             <h3>6. 隱私權政策的變更</h3>
             <p>我們可能會不時更新我們的隱私權政策。因此，建議您定期查看本頁面以了解任何變更。我們會透過在本頁面上發布新的隱私權政策來通知您任何變更。</p>
 
-            <h3>7. 資料刪除</h3>
-            <p>由於 HuaMotion Lab 不會將您的個人資料儲存在私人伺服器上，您的遊戲資料（排行榜、成就）是由 Google Play 遊戲服務管理。若您希望刪除遊戲資料，您可以：</p>
-            <ul>
-                <li>前往 Android 設定 > Google > Google 應用程式設定 > Play 遊戲 > 刪除 Play 遊戲帳號與資料。</li>
-                <li>或透過下方的電子郵件聯絡我們尋求協助。</li>
-            </ul>
-
-            <h3>8. 聯絡我們</h3>
+            <h3>7. 聯絡我們</h3>
             <p>如果您對我們的隱私權政策有任何疑問或建議，請隨時透過以下方式聯絡我們：<strong>easymoveblocks.studio@gmail.com</strong></p>
         </div>
 
-        <hr class="divider">
-
-        <div class="language-section">
+        <div id="lang-ja" class="language-section" style="display: none;">
             <span class="lang-tag">日本語</span>
             <h1>プライバシーポリシー</h1>
             <p><strong>アプリ名：</strong> Reflex Block (瞬感ブロック)<br>
-            <strong>開発者：</strong> HuaMotion Lab<br>
-            <strong>最終更新日：</strong> 2026年 02月 01日</p>
+                <strong>開発者：</strong> HuaMotion Lab<br>
+                <strong>最終更新日：</strong> 2026年 02月 01日
+            </p>
 
             <h3>1. はじめに</h3>
-            <p>HuaMotion Lab は、広告付きの無料アプリとして Reflex Block（以下「本サービス」）を開発しました。本サービスは HuaMotion Lab によって現状有姿で提供されます。このページは、利用者が本サービスを使用する場合の個人情報の収集、使用、開示に関する当社の方針をお知らせするためのものです。</p>
+            <p>HuaMotion Lab は、広告付きの無料アプリとして Reflex Block（以下「本サービス」）を開発しました。本サービスは HuaMotion Lab
+                によって現状有姿で提供されます。このページは、利用者が本サービスを使用する場合の個人情報の収集、使用、開示に関する当社の方針をお知らせするためのものです。</p>
 
             <h3>2. 情報の収集と使用</h3>
-            <p>HuaMotion Lab は、ユーザーの個人情報を独自のサーバーに保存することはありません。ただし、本アプリは、必要な機能を提供するために、ユーザーまたはデバイスを特定するために使用される情報を収集する可能性のある第三者サービスを使用しています。</p>
+            <p>HuaMotion Lab
+                は、ユーザーの個人情報を独自のサーバーに保存することはありません。ただし、本アプリは、必要な機能を提供するために、ユーザーまたはデバイスを特定するために使用される情報を収集する可能性のある第三者サービスを使用しています。
+            </p>
             <p>本アプリが使用する第三者サービスは以下の通りです：</p>
             <ul>
                 <li><strong>Google Play ゲームサービス (GPGS)</strong><br>
-                本アプリは、サインイン、ランキング（リーダーボード）、クラウドセーブなどの機能を提供するために Google Play ゲームサービスを使用しています。これらの機能を使用することで、GoogleがゲーマーID、プロフィール名、アバター、およびゲームアクティビティ（スコア、レベル進行状況、実績など）のデータを収集・処理することに同意したものとみなされます。これらのデータは、公開ランキングでの順位表示やゲーム進行状況の同期に使用されます。</li>
+                    本アプリは、サインイン、ランキング（リーダーボード）、クラウドセーブなどの機能を提供するために Google Play
+                    ゲームサービスを使用しています。これらの機能を使用することで、GoogleがゲーマーID、プロフィール名、アバター、およびゲームアクティビティ（スコア、レベル進行状況、実績など）のデータを収集・処理することに同意したものとみなされます。これらのデータは、公開ランキングでの順位表示やゲーム進行状況の同期に使用されます。
+                </li>
                 <li><strong>Google AdMob</strong><br>
-                本アプリは、広告を表示するために Google AdMob を使用しています。AdMob は、ユーザーの興味に関連したパーソナライズされた広告を提供するために、デバイス識別子（Android広告IDなど）や広告との対話データを使用する場合があります。</li>
+                    本アプリは、広告を表示するために Google AdMob を使用しています。AdMob
+                    は、ユーザーの興味に関連したパーソナライズされた広告を提供するために、デバイス識別子（Android広告IDなど）や広告との対話データを使用する場合があります。</li>
             </ul>
             <p>第三者サービス提供者のプライバシーポリシーへのリンク：</p>
             <ul>
@@ -234,32 +296,447 @@
             </ul>
 
             <h3>3. ログデータ</h3>
-            <p>本サービスの使用中にアプリでエラーが発生した場合、当社は（第三者の製品を通じて）ログデータと呼ばれる携帯電話上のデータと情報を収集する場合があります。このログデータには、デバイスのインターネットプロトコル（IP）アドレス、デバイス名、オペレーティングシステムのバージョン、本サービス利用時のアプリの設定、サービス利用の日時、およびその他の統計情報が含まれる場合があります。</p>
+            <p>本サービスの使用中にアプリでエラーが発生した場合、当社は（第三者の製品を通じて）ログデータと呼ばれる携帯電話上のデータと情報を収集する場合があります。このログデータには、デバイスのインターネットプロトコル（IP）アドレス、デバイス名、オペレーティングシステムのバージョン、本サービス利用時のアプリの設定、サービス利用の日時、およびその他の統計情報が含まれる場合があります。
+            </p>
 
             <h3>4. クッキー (Cookies)</h3>
             <p>本サービス自体はクッキーを明示的に使用しません。ただし、本アプリは、サービスの向上を目的として情報を収集するためにクッキーを使用する第三者のコードやライブラリを使用する場合があります。</p>
 
             <h3>5. セキュリティ</h3>
-            <p>当社は、個人情報の提供における利用者の信頼を重視し、その保護のために商業的に許容される手段を用いるよう努めています。ただし、インターネット上の送信方法や電子ストレージの方法は 100% 安全で信頼できるものではなく、絶対的なセキュリティを保証することはできません。</p>
+            <p>当社は、個人情報の提供における利用者の信頼を重視し、その保護のために商業的に許容される手段を用いるよう努めています。ただし、インターネット上の送信方法や電子ストレージの方法は 100%
+                安全で信頼できるものではなく、絶対的なセキュリティを保証することはできません。</p>
 
             <h3>6. プライバシーポリシーの変更</h3>
-            <p>当社は、プライバシーポリシーを随時更新する場合があります。したがって、変更がないか定期的にこのページを確認することをお勧めします。変更があった場合は、このページに新しいプライバシーポリシーを掲載することでお知らせします。</p>
+            <p>当社は、プライバシーポリシーを随時更新する場合があります。したがって、変更がないか定期的にこのページを確認することをお勧めします。変更があった場合は、このページに新しいプライバシーポリシーを掲載することでお知らせします。
+            </p>
 
-            <h3>7. データの削除</h3>
-            <p>HuaMotion Lab は個人データを独自のサーバーに保存していないため、ゲームデータ（ランキング、実績）は Google Play ゲームサービスによって管理されています。データを削除するには、以下の方法があります：</p>
+            <h3>7. お問い合わせ</h3>
+            <p>当社のプライバシーポリシーについてご質問やご提案がある場合は、お気軽に以下までご連絡ください： <strong>easymoveblocks.studio@gmail.com</strong></p>
+        </div>
+
+        <div id="lang-es" class="language-section" style="display: none;">
+            <span class="lang-tag">Español</span>
+            <h1>Política de Privacidad</h1>
+            <p><strong>Nombre de la aplicación:</strong> Reflex Block<br>
+                <strong>Desarrollador:</strong> HuaMotion Lab<br>
+                <strong>Última actualización:</strong> 01 de febrero de 2026
+            </p>
+
+            <h3>1. Introducción</h3>
+            <p>HuaMotion Lab ha creado la aplicación Reflex Block como una aplicación con publicidad. Este SERVICIO es
+                proporcionado por HuaMotion Lab sin costo alguno y está diseñado para usarse tal cual. Esta página se
+                utiliza para informar a los visitantes sobre nuestras políticas con respecto a la recopilación, el uso y
+                la divulgación de Información Personal si alguien decide usar nuestro Servicio.</p>
+
+            <h3>2. Recopilación y uso de datos</h3>
+            <p>Aunque HuaMotion Lab no almacena sus datos personales en nuestros propios servidores privados, nuestra
+                aplicación utiliza servicios de terceros que pueden recopilar información utilizada para identificarlo a
+                usted o a su dispositivo para proporcionar la funcionalidad necesaria.</p>
+            <p>La aplicación utiliza los siguientes servicios de terceros:</p>
             <ul>
-                <li>Android 設定 > Google > Google アプリの設定 > Play ゲーム > Play ゲームのアカウントとデータを削除。</li>
-                <li>または、以下のメールアドレスまでお問い合わせください。</li>
+                <li><strong>Google Play Games Services (GPGS)</strong><br>
+                    Esta aplicación utiliza los servicios de juegos de Google Play para proporcionar funciones como
+                    inicio de sesión, tablas de clasificación y guardado en la nube. Al utilizar estas funciones, usted
+                    reconoce que Google puede recopilar y procesar datos como su ID de jugador, nombre de perfil, avatar
+                    y actividad del juego (ej. puntajes, progreso de nivel y logros) de acuerdo con la Política de
+                    privacidad de Google.</li>
+                <li><strong>Google AdMob</strong><br>
+                    Esta aplicación utiliza Google AdMob para mostrar anuncios. AdMob puede utilizar identificadores de
+                    dispositivos (ej. ID de publicidad de Android) y datos sobre su interacción con los anuncios para
+                    proporcionar anuncios personalizados relevantes para sus intereses.</li>
+            </ul>
+            <p>Enlace a la Política de Privacidad de los proveedores de servicios de terceros:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank">Google Play Services</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=es" target="_blank">AdMob</a></li>
             </ul>
 
-            <h3>8. お問い合わせ</h3>
-            <p>当社のプライバシーポリシーについてご質問やご提案がある場合は、お気軽に以下までご連絡ください： <strong>easymoveblocks.studio@gmail.com</strong></p>
+            <h3>3. Datos de registro (Log Data)</h3>
+            <p>Queremos informarle que cada vez que utiliza nuestro Servicio, en caso de un error en la aplicación,
+                recopilamos datos e información (a través de productos de terceros) en su teléfono, denominados Datos de
+                registro. Estos Datos de registro pueden incluir información como la dirección de Protocolo de Internet
+                ("IP") de su dispositivo, el nombre del dispositivo, la versión del sistema operativo, la configuración
+                de la aplicación y otras estadísticas.</p>
+
+            <h3>4. Cookies</h3>
+            <p>Este Servicio no utiliza "cookies" explícitamente. Sin embargo, la aplicación puede utilizar códigos y
+                bibliotecas de terceros que utilizan "cookies" para recopilar información y mejorar sus servicios.</p>
+
+            <h3>5. Seguridad</h3>
+            <p>Valoramos su confianza al proporcionarnos su Información Personal, por lo que nos esforzamos por utilizar
+                medios comercialmente aceptables para protegerla. Pero recuerde que ningún método de transmisión por
+                Internet o método de almacenamiento electrónico es 100% seguro y confiable, y no podemos garantizar su
+                absoluta seguridad.</p>
+
+            <h3>6. Cambios a esta Política de Privacidad</h3>
+            <p>Podemos actualizar nuestra Política de Privacidad de vez en cuando. Por lo tanto, se le recomienda
+                revisar esta página periódicamente para ver si hay cambios. Le notificaremos de cualquier cambio
+                publicando la nueva Política de Privacidad en esta página.</p>
+
+            <h3>7. Contáctenos</h3>
+            <p>Si tiene alguna pregunta o sugerencia sobre nuestra Política de Privacidad, no dude en contactarnos en:
+                <strong>easymoveblocks.studio@gmail.com</strong>
+            </p>
+        </div>
+
+        <div id="lang-pt-BR" class="language-section" style="display: none;">
+            <span class="lang-tag">Português (BR)</span>
+            <h1>Política de Privacidade</h1>
+            <p><strong>Nome do aplicativo:</strong> Reflex Block<br>
+                <strong>Desenvolvedor:</strong> HuaMotion Lab<br>
+                <strong>Última atualização:</strong> 01 de fevereiro de 2026
+            </p>
+
+            <h3>1. Introdução</h3>
+            <p>A HuaMotion Lab construiu o aplicativo Reflex Block como um aplicativo suportado por anúncios. Este
+                SERVIÇO é fornecido pela HuaMotion Lab sem custo e destina-se ao uso como está. Esta página é usada para
+                informar os visitantes sobre nossas políticas com a coleta, uso e divulgação de Informações Pessoais,
+                caso alguém decida usar nosso Serviço.</p>
+
+            <h3>2. Coleta e Uso de Dados</h3>
+            <p>Embora a HuaMotion Lab não armazene seus dados pessoais em nossos próprios servidores privados, nosso
+                aplicativo usa serviços de terceiros que podem coletar informações usadas para identificar você ou seu
+                dispositivo para fornecer a funcionalidade necessária.</p>
+            <p>O aplicativo usa os seguintes serviços de terceiros:</p>
+            <ul>
+                <li><strong>Google Play Games Services (GPGS)</strong><br>
+                    Este aplicativo usa os Serviços de Jogos do Google Play para fornecer recursos como login, placares
+                    de líderes e salvamento na nuvem. Ao usar esses recursos, você reconhece que o Google pode coletar e
+                    processar dados como seu ID de jogador, nome de perfil, avatar e atividade de jogo de acordo com a
+                    Política de Privacidade do Google.</li>
+                <li><strong>Google AdMob</strong><br>
+                    Este aplicativo usa o Google AdMob para exibir anúncios. A AdMob pode usar identificadores de
+                    dispositivos (ex: ID de publicidade do Android) e dados sobre sua interação com os anúncios para
+                    fornecer anúncios personalizados relevantes aos seus interesses.</li>
+            </ul>
+            <p>Link para a Política de Privacidade de provedores de serviços de terceiros:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank">Google Play Services</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=pt-BR" target="_blank">AdMob</a></li>
+            </ul>
+
+            <h3>3. Dados de Registro (Log Data)</h3>
+            <p>Queremos informá-lo que, sempre que você usar nosso Serviço, no caso de um erro no aplicativo, coletamos
+                dados e informações (por meio de produtos de terceiros) no seu telefone, chamados Dados de Registro.
+                Esses Dados de Registro podem incluir informações como o endereço IP do seu dispositivo, nome do
+                dispositivo, versão do sistema operacional, a configuração do aplicativo ao utilizar nosso Serviço e
+                outras estatísticas.</p>
+
+            <h3>4. Cookies</h3>
+            <p>Este Serviço não usa esses “cookies” explicitamente. No entanto, o aplicativo pode usar códigos e
+                bibliotecas de terceiros que usam “cookies” para coletar informações e melhorar seus serviços.</p>
+
+            <h3>5. Segurança</h3>
+            <p>Valorizamos sua confiança em nos fornecer suas Informações Pessoais, por isso estamos nos esforçando para
+                usar meios comercialmente aceitáveis de protegê-las. Mas lembre-se que nenhum método de transmissão pela
+                internet, ou método de armazenamento eletrônico é 100% seguro e confiável, e não podemos garantir sua
+                segurança absoluta.</p>
+
+            <h3>6. Alterações a Esta Política de Privacidade</h3>
+            <p>Podemos atualizar nossa Política de Privacidade de tempos em tempos. Assim, aconselhamos que você revise
+                esta página periodicamente para quaisquer alterações. Notificaremos você sobre quaisquer alterações
+                publicando a nova Política de Privacidade nesta página.</p>
+
+            <h3>7. Contate-nos</h3>
+            <p>Se você tiver alguma dúvida ou sugestão sobre nossa Política de Privacidade, não hesite em nos contatar
+                em: <strong>easymoveblocks.studio@gmail.com</strong></p>
+        </div>
+
+        <div id="lang-ko" class="language-section" style="display: none;">
+            <span class="lang-tag">한국어</span>
+            <h1>개인정보처리방침</h1>
+            <p><strong>앱 이름:</strong> Reflex Block<br>
+                <strong>개발자:</strong> HuaMotion Lab<br>
+                <strong>최종 수정일:</strong> 2026년 02월 01일
+            </p>
+
+            <h3>1. 소개</h3>
+            <p>HuaMotion Lab은 Reflex Block 앱을 광고 지원 앱으로 개발하였습니다. 본 서비스는 HuaMotion Lab에서 무료로 제공하며, 있는 그대로 사용하도록 의도되었습니다.
+                이 페이지는 사용자가 본 서비스를 이용하기로 결정한 경우 개인정보의 수집, 사용 및 공개와 관련된 당사의 정책을 방문자에게 알리기 위해 사용됩니다.</p>
+
+            <h3>2. 데이터 수집 및 사용</h3>
+            <p>HuaMotion Lab은 자체 개인 서버에 귀하의 개인 데이터를 저장하지 않지만, 당사 앱은 필요한 기능을 제공하기 위해 귀하 또는 귀하의 기기를 식별하는 데 사용되는 정보를 수집할 수
+                있는 타사 서비스를 사용합니다.</p>
+            <p>앱에서 사용하는 타사 서비스는 다음과 같습니다:</p>
+            <ul>
+                <li><strong>Google Play 게임 서비스 (GPGS)</strong><br>
+                    이 앱은 로그인, 순위표 및 클라우드 저장과 같은 기능을 제공하기 위해 Google Play 게임 서비스를 사용합니다. 이 기능을 사용함으로써 귀하는 Google이 Google의
+                    개인정보처리방침에 따라 귀하의 게이머 ID, 프로필 이름, 아바타 및 게임 활동(예: 점수, 레벨 진행, 업적)과 같은 데이터를 수집하고 처리할 수 있음을 인정합니다.</li>
+                <li><strong>Google AdMob</strong><br>
+                    이 앱은 광고를 표시하기 위해 Google AdMob을 사용합니다. AdMob은 귀하의 관심사에 맞는 맞춤형 광고를 제공하기 위해 기기 식별자(예: Android 광고 ID) 및
+                    광고 상호작용에 대한 데이터를 사용할 수 있습니다.</li>
+            </ul>
+            <p>타사 서비스 제공업체의 개인정보처리방침 링크:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank">Google Play 서비스</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=ko" target="_blank">AdMob</a></li>
+            </ul>
+
+            <h3>3. 로그 데이터</h3>
+            <p>당사는 귀하가 당사 서비스를 사용할 때 앱에 오류가 발생하는 경우 귀하의 휴대폰에서 로그 데이터라고 하는 데이터 및 정보(타사 제품을 통해)를 수집함을 알려드립니다. 이 로그 데이터에는
+                기기 인터넷 프로토콜("IP") 주소, 기기 이름, 운영 체제 버전, 서비스 이용 시 앱 구성, 서비스 이용 시간 및 날짜, 기타 통계와 같은 정보가 포함될 수 있습니다.</p>
+
+            <h3>4. 쿠키 (Cookies)</h3>
+            <p>본 서비스는 이러한 "쿠키"를 명시적으로 사용하지 않습니다. 그러나 앱은 정보를 수집하고 서비스를 개선하기 위해 "쿠키"를 사용하는 타사 코드 및 라이브러리를 사용할 수 있습니다.</p>
+
+            <h3>5. 보안</h3>
+            <p>당사는 귀하가 개인정보를 제공해 주신 것에 대한 신뢰를 소중하게 생각하며, 이를 보호하기 위해 상업적으로 허용되는 수단을 사용하기 위해 노력하고 있습니다. 그러나 인터넷을 통한 전송
+                방법이나 전자 저장 방법은 100% 안전하고 신뢰할 수 없으며 절대적인 보안을 보장할 수 없음을 기억하시기 바랍니다.</p>
+
+            <h3>6. 개인정보처리방침의 변경</h3>
+            <p>당사는 개인정보처리방침을 수시로 업데이트할 수 있습니다. 따라서 이 페이지를 주기적으로 검토하여 변경 사항이 있는지 확인하는 것이 좋습니다. 이 페이지에 새로운 개인정보처리방침을 게시하여
+                변경 사항을 알려드립니다.</p>
+
+            <h3>7. 문의하기</h3>
+            <p>당사의 개인정보처리방침에 대한 질문이나 제안 사항이 있으시면 주저하지 말고 <strong>easymoveblocks.studio@gmail.com</strong>으로 연락해 주십시오.
+            </p>
+        </div>
+
+        <div id="lang-id" class="language-section" style="display: none;">
+            <span class="lang-tag">Bahasa Indonesia</span>
+            <h1>Kebijakan Privasi</h1>
+            <p><strong>Nama Aplikasi:</strong> Reflex Block<br>
+                <strong>Pengembang:</strong> HuaMotion Lab<br>
+                <strong>Pembaruan Terakhir:</strong> 01 Februari 2026
+            </p>
+
+            <h3>1. Pengantar</h3>
+            <p>HuaMotion Lab membangun aplikasi Reflex Block sebagai aplikasi yang didukung iklan. LAYANAN ini
+                disediakan oleh HuaMotion Lab tanpa biaya dan dimaksudkan untuk digunakan sebagaimana adanya. Halaman
+                ini digunakan untuk memberi tahu pengunjung mengenai kebijakan kami dengan pengumpulan, penggunaan, dan
+                pengungkapan Informasi Pribadi jika ada yang memutuskan untuk menggunakan Layanan kami.</p>
+
+            <h3>2. Pengumpulan & Penggunaan Data</h3>
+            <p>Meskipun HuaMotion Lab tidak menyimpan data pribadi Anda di server pribadi kami, aplikasi kami
+                menggunakan layanan pihak ketiga yang mungkin mengumpulkan informasi yang digunakan untuk
+                mengidentifikasi Anda atau perangkat Anda untuk menyediakan fungsionalitas yang diperlukan.</p>
+            <p>Aplikasi ini menggunakan layanan pihak ketiga berikut:</p>
+            <ul>
+                <li><strong>Google Play Games Services (GPGS)</strong><br>
+                    Aplikasi ini menggunakan Layanan Google Play Game untuk menyediakan fitur seperti masuk, papan
+                    peringkat, dan penyimpanan cloud. Dengan menggunakan fitur ini, Anda mengakui bahwa Google dapat
+                    mengumpulkan dan memproses data seperti ID Pemain, nama profil, avatar, dan aktivitas game Anda
+                    sesuai dengan Kebijakan Privasi Google.</li>
+                <li><strong>Google AdMob</strong><br>
+                    Aplikasi ini menggunakan Google AdMob untuk menampilkan iklan. AdMob dapat menggunakan
+                    pengidentifikasi perangkat (mis., ID Iklan Android) dan data tentang interaksi Anda dengan iklan
+                    untuk menyediakan iklan yang dipersonalisasi dan relevan dengan minat Anda.</li>
+            </ul>
+            <p>Tautan ke Kebijakan Privasi penyedia layanan pihak ketiga:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank">Google Play Services</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=id" target="_blank">AdMob</a></li>
+            </ul>
+
+            <h3>3. Data Log</h3>
+            <p>Kami ingin memberi tahu Anda bahwa kapan pun Anda menggunakan Layanan kami, jika terjadi kesalahan pada
+                aplikasi, kami mengumpulkan data dan informasi (melalui produk pihak ketiga) di ponsel Anda yang disebut
+                Data Log. Data Log ini dapat mencakup informasi seperti alamat Protokol Internet ("IP") perangkat Anda,
+                nama perangkat, versi sistem operasi, konfigurasi aplikasi saat memanfaatkan Layanan kami, waktu dan
+                tanggal penggunaan Layanan oleh Anda, dan statistik lainnya.</p>
+
+            <h3>4. Cookies</h3>
+            <p>Layanan ini tidak menggunakan "cookies" ini secara eksplisit. Namun, aplikasi mungkin menggunakan kode
+                pihak ketiga dan perpustakaan yang menggunakan "cookies" untuk mengumpulkan informasi dan meningkatkan
+                layanan mereka.</p>
+
+            <h3>5. Keamanan</h3>
+            <p>Kami menghargai kepercayaan Anda dalam memberikan Informasi Pribadi Anda kepada kami, sehingga kami
+                berusaha untuk menggunakan cara yang dapat diterima secara komersial untuk melindunginya. Namun ingat
+                bahwa tidak ada metode transmisi melalui internet, atau metode penyimpanan elektronik yang 100% aman dan
+                andal, dan kami tidak dapat menjamin keamanan mutlaknya.</p>
+
+            <h3>6. Perubahan Kebijakan Privasi Ini</h3>
+            <p>Kami dapat memperbarui Kebijakan Privasi kami dari waktu ke waktu. Oleh karena itu, Anda disarankan untuk
+                meninjau halaman ini secara berkala untuk setiap perubahan. Kami akan memberi tahu Anda tentang segala
+                perubahan dengan mengunggah Kebijakan Privasi baru di halaman ini.</p>
+
+            <h3>7. Hubungi Kami</h3>
+            <p>Jika Anda memiliki pertanyaan atau saran tentang Kebijakan Privasi kami, jangan ragu untuk menghubungi
+                kami di: <strong>easymoveblocks.studio@gmail.com</strong></p>
+        </div>
+
+        <div id="lang-tl" class="language-section" style="display: none;">
+            <span class="lang-tag">Tagalog</span>
+            <h1>Patakaran sa Pagkapribado</h1>
+            <p><strong>Pangalan ng App:</strong> Reflex Block<br>
+                <strong>Developer:</strong> HuaMotion Lab<br>
+                <strong>Huling na-update:</strong> Pebrero 01, 2026
+            </p>
+
+            <h3>1. Panimula</h3>
+            <p>Binuo ng HuaMotion Lab ang Reflex Block app bilang isang app na sinusuportahan ng ad. Ang SERBISYONG ito
+                ay ibinibigay ng HuaMotion Lab nang walang bayad at inilaan para magamit as is. Ginagamit ang pahinang
+                ito upang ipaalam sa mga bisita ang tungkol sa aming mga patakaran sa pangongolekta, paggamit, at
+                pagbubunyag ng Personal na Impormasyon kung may magpasyang gumamit ng aming Serbisyo.</p>
+
+            <h3>2. Pangongolekta at Paggamit ng Datos</h3>
+            <p>Kahit na hindi iniimbak ng HuaMotion Lab ang iyong personal na datos sa aming sariling mga pribadong
+                server, ang aming app ay gumagamit ng mga serbisyo ng third-party na maaaring mangolekta ng impormasyon
+                na ginagamit upang makilala ka o ang iyong device para magbigay ng kinakailangang functionality.</p>
+            <p>Gumagamit ang app ng mga sumusunod na third-party na serbisyo:</p>
+            <ul>
+                <li><strong>Google Play Games Services (GPGS)</strong><br>
+                    Gumagamit ang app na ito ng Google Play Games Services para magbigay ng mga feature tulad ng
+                    sign-in, mga leaderboard, at cloud saves. Sa paggamit ng mga feature na ito, kinikilala mo na ang
+                    Google ay maaaring mangolekta at magproseso ng datos gaya ng iyong Gamer ID, pangalan ng profile,
+                    avatar, at aktibidad sa laro alinsunod sa Patakaran sa Pagkapribado ng Google.</li>
+                <li><strong>Google AdMob</strong><br>
+                    Gumagamit ang app na ito ng Google AdMob para magpakita ng mga patalastas. Ang AdMob ay maaaring
+                    gumamit ng mga identifier ng device (hal. Android Advertising ID) at datos tungkol sa iyong
+                    interaksyon sa mga ad para magbigay ng mga isinapersonal na patalastas na may kaugnayan sa iyong mga
+                    interes.</li>
+            </ul>
+            <p>Link sa Patakaran sa Pagkapribado ng mga third-party service provider:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank">Google Play Services</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
+            </ul>
+
+            <h3>3. Log Data</h3>
+            <p>Gusto naming ipaalam sa iyo na sa tuwing ginagamit mo ang aming Serbisyo, kung sakaling may error sa app,
+                kumokolekta kami ng datos at impormasyon (sa pamamagitan ng mga third-party na produkto) sa iyong
+                telepono na tinatawag na Log Data. Ang Log Data na ito ay maaaring maglaman ng impormasyon tulad ng
+                Internet Protocol ("IP") address ng iyong device, pangalan ng device, bersyon ng operating system, ang
+                configuration ng app kapag ginagamit ang aming Serbisyo, ang oras at petsa ng iyong paggamit sa
+                Serbisyo, at iba pang istatistika.</p>
+
+            <h3>4. Cookies</h3>
+            <p>Ang Serbisyo na ito ay hindi direktang gumagamit ng "cookies". Gayunpaman, maaaring gumamit ang app ng
+                third-party na code at mga library na gumagamit ng "cookies" upang mangolekta ng impormasyon at mapabuti
+                ang kanilang mga serbisyo.</p>
+
+            <h3>5. Seguridad</h3>
+            <p>Pinahahalagahan namin ang iyong tiwala sa pagbibigay sa amin ng iyong Personal na Impormasyon, kaya
+                nagsusumikap kaming gumamit ng mga paraang katanggap-tanggap sa komersyo para protektahan ito. Ngunit
+                tandaan na walang paraan ng pagpapadala sa internet, o paraan ng electronic storage ang 100% secure at
+                maaasahan, at hindi namin magagarantiya ang ganap na kaligtasan nito.</p>
+
+            <h3>6. Mga Pagbabago sa Patakaran sa Pagkapribado na ito</h3>
+            <p>Maaari naming i-update ang aming Patakaran sa Pagkapribado sa pana-panahon. Kaya naman, pinapayuhan ka
+                naming suriin ang pahinang ito nang madalas para sa anumang mga pagbabago. Ipapaalam namin sa iyo ang
+                anumang mga pagbabago sa pamamagitan ng pag-post ng bagong Patakaran sa Pagkapribado sa pahinang ito.
+            </p>
+
+            <h3>7. Makipag-ugnayan sa Amin</h3>
+            <p>Kung mayroon kang anumang mga katanungan o mungkahi tungkol sa aming Patakaran sa Pagkapribado, huwag
+                mag-atubiling makipag-ugnayan sa amin sa: <strong>easymoveblocks.studio@gmail.com</strong></p>
+        </div>
+
+        <div id="lang-hi" class="language-section" style="display: none;">
+            <span class="lang-tag">हिन्दी</span>
+            <h1>गोपनीयता नीति (Privacy Policy)</h1>
+            <p><strong>ऐप का नाम:</strong> Reflex Block<br>
+                <strong>डेवलपर:</strong> HuaMotion Lab<br>
+                <strong>अंतिम अपडेट:</strong> 01 फरवरी, 2026
+            </p>
+
+            <h3>1. परिचय</h3>
+            <p>HuaMotion Lab ने Reflex Block ऐप को एक विज्ञापन-समर्थित ऐप के रूप में बनाया है। यह सेवा HuaMotion Lab
+                द्वारा बिना किसी कीमत के प्रदान की जाती है और इसका उद्देश्य जैसा है वैसा ही उपयोग करना है। इस पृष्ठ का
+                उपयोग आगंतुकों को व्यक्तिगत जानकारी के संग्रह, उपयोग और प्रकटीकरण के साथ हमारी नीतियों के बारे में सूचित
+                करने के लिए किया जाता है यदि किसी ने हमारी सेवा का उपयोग करने का निर्णय लिया है।</p>
+
+            <h3>2. डेटा संग्रह और उपयोग</h3>
+            <p>यद्यपि HuaMotion Lab आपके व्यक्तिगत डेटा को हमारे अपने निजी सर्वर पर संग्रहीत नहीं करता है, हमारा ऐप
+                तीसरे पक्ष की सेवाओं का उपयोग करता है जो आपको या आपके डिवाइस को आवश्यक कार्यक्षमता प्रदान करने के लिए
+                पहचानने के लिए उपयोग की जाने वाली जानकारी एकत्र कर सकते हैं।</p>
+            <p>ऐप निम्नलिखित तृतीय-पक्ष सेवाओं का उपयोग करता है:</p>
+            <ul>
+                <li><strong>Google Play Games Services (GPGS)</strong><br>
+                    यह ऐप साइन-इन, लीडरबोर्ड और क्लाउड सेव जैसी सुविधाएं प्रदान करने के लिए Google Play गेम सेवाओं का
+                    उपयोग करता है। इन सुविधाओं का उपयोग करके, आप स्वीकार करते हैं कि Google अपनी गोपनीयता नीति के अनुसार
+                    आपके गेमर आईडी, प्रोफ़ाइल नाम, अवतार और गेम गतिविधि (जैसे, स्कोर, स्तर की प्रगति और उपलब्धियां) जैसे
+                    डेटा एकत्र और संसाधित कर सकता है।</li>
+                <li><strong>Google AdMob</strong><br>
+                    यह ऐप विज्ञापन प्रदर्शित करने के लिए Google AdMob का उपयोग करता है। AdMob आपके हितों के लिए
+                    प्रासंगिक व्यक्तिगत विज्ञापन प्रदान करने के लिए डिवाइस पहचानकर्ताओं (उदा., Android विज्ञापन आईडी) और
+                    विज्ञापनों के साथ आपकी बातचीत के बारे में डेटा का उपयोग कर सकता है।</li>
+            </ul>
+            <p>तृतीय-पक्ष सेवा प्रदाताओं की गोपनीयता नीति का लिंक:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank">Google Play Services</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=hi" target="_blank">AdMob</a></li>
+            </ul>
+
+            <h3>3. लॉग डेटा (Log Data)</h3>
+            <p>हम आपको सूचित करना चाहते हैं कि जब भी आप हमारी सेवा का उपयोग करते हैं, ऐप में किसी त्रुटि के मामले में हम
+                आपके फोन居 लॉग डेटा नामक डेटा और जानकारी (तृतीय-पक्ष उत्पादों के माध्यम से) एकत्र करते हैं। इस लॉग डेटा
+                में आपके डिवाइस का इंटरनेट प्रोटोकॉल ("IP") पता, डिवाइस का नाम, ऑपरेटिंग सिस्टम संस्करण, हमारी सेवा का
+                उपयोग करते समय ऐप का कॉन्फ़िगरेशन, आपके द्वारा सेवा के उपयोग का समय और तिथि, और अन्य आंकड़े जैसी जानकारी
+                शामिल हो सकती है।</p>
+
+            <h3>4. कुकीज़ (Cookies)</h3>
+            <p>यह सेवा स्पष्ट रूप से इन "कुकीज़" का उपयोग नहीं करती है। हालाँकि, ऐप तृतीय-पक्ष कोड और पुस्तकालयों का
+                उपयोग कर सकता है जो जानकारी एकत्र करने और अपनी सेवाओं को बेहतर बनाने के लिए "कुकीज़" का उपयोग करते हैं।
+            </p>
+
+            <h3>5. सुरक्षा</h3>
+            <p>हम हमें अपनी व्यक्तिगत जानकारी प्रदान करने में आपके विश्वास को महत्व देते हैं, इसलिए हम इसे सुरक्षित करने
+                के व्यावसायिक रूप से स्वीकार्य साधनों का उपयोग करने का प्रयास कर रहे हैं। लेकिन याद रखें कि इंटरनेट पर
+                प्रसारण की कोई भी विधि, या इलेक्ट्रॉनिक भंडारण की विधि 100% सुरक्षित और विश्वसनीय नहीं है, और हम इसकी
+                पूर्ण सुरक्षा की गारंटी नहीं दे सकते।</p>
+
+            <h3>6. इस गोपनीयता नीति में परिवर्तन</h3>
+            <p>हम समय-समय पर अपनी गोपनीयता नीति को अपडेट कर सकते हैं। इसलिए, आपको किसी भी बदलाव के लिए समय-समय पर इस
+                पृष्ठ की समीक्षा करने की सलाह दी जाती है। हम इस पृष्ठ पर नई गोपनीयता नीति पोस्ट करके आपको किसी भी बदलाव
+                के बारे में सूचित करेंगे।</p>
+
+            <h3>7. हमसे संपर्क करें</h3>
+            <p>यदि हमारी गोपनीयता नीति के बारे में आपके कोई प्रश्न या सुझाव हैं, तो बेझिझक हमसे यहां संपर्क करें:
+                <strong>easymoveblocks.studio@gmail.com</strong>
+            </p>
         </div>
 
         <div style="text-align: center; margin-top: 50px; color: #94a3b8; font-size: 0.9rem;">
             Copyright © 2026 HuaMotion Lab. All rights reserved.
         </div>
     </div>
+    </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.lang-btn');
+            const sections = document.querySelectorAll('.language-section');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active from all buttons
+                    buttons.forEach(b => b.classList.remove('active'));
+                    // Add active to clicked button
+                    btn.classList.add('active');
+
+                    // Hide all sections
+                    sections.forEach(sec => sec.style.display = 'none');
+                    // Show target section
+                    const targetId = btn.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.style.display = 'block';
+                    }
+                });
+            });
+
+            // Auto detect language from browser if possible
+            const userLang = navigator.language || navigator.userLanguage || 'en';
+            const lowerLang = userLang.toLowerCase();
+            let matchedTarget = 'lang-en';
+
+            if (lowerLang.startsWith('zh')) matchedTarget = 'lang-zh';
+            else if (lowerLang.startsWith('ja')) matchedTarget = 'lang-ja';
+            else if (lowerLang.startsWith('ko')) matchedTarget = 'lang-ko';
+            else if (lowerLang.startsWith('es')) matchedTarget = 'lang-es';
+            else if (lowerLang.startsWith('pt')) matchedTarget = 'lang-pt-BR';
+            else if (lowerLang.startsWith('id')) matchedTarget = 'lang-id';
+            else if (lowerLang.startsWith('hi')) matchedTarget = 'lang-hi';
+            else if (lowerLang.startsWith('tl') || lowerLang.startsWith('fil')) matchedTarget = 'lang-tl';
+
+            const autoBtn = document.querySelector(`.lang-btn[data-target="${matchedTarget}"]`);
+            if (autoBtn) {
+                autoBtn.click();
+            }
+        });
+    </script>
 </body>
+
 </html>
